@@ -33,7 +33,11 @@
             <Pack>True</Pack>
             <PackagePath>buildTransitive</PackagePath>
         </None>
-		<None Include="..\README.md" Pack="true" PackagePath="\"/>
+        <None Remove="App_Plugins\Cultiv.Hangfire\lang\da-DK.xml" />
+        <None Remove="App_Plugins\Cultiv.Hangfire\overview.controller.js" />
+        <None Remove="App_Plugins\Cultiv.Hangfire\overview.html" />
+        <None Remove="App_Plugins\Cultiv.Hangfire\styles.css" />
+		<None Include="..\README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 	<ItemGroup>
 		<None Include="../LICENSE" Pack="true" PackagePath="" />

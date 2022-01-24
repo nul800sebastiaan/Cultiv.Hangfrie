@@ -8,5 +8,11 @@
         "settings"
       ]
     }
+  ],
+  "css": [
+    "/App_Plugins/Cultiv.Hangfire/styles.css"
+  ],
+  "js": [
+    "/App_Plugins/Cultiv.Hangfire/overview.controller.js"
   ]
 }

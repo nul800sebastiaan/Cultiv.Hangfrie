@@ -1,0 +1,13 @@
+﻿﻿.hangfire-overview .umb-pane {
+    margin: 0;
+}
+
+.hangfireWrapper {
+    margin: 0;
+}
+
+.hangfireContent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
