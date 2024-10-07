@@ -1,5 +1,4 @@
-﻿using System;
-using Hangfire;
+﻿using Hangfire;
 using Hangfire.Console;
 using Hangfire.Dashboard;
 using Hangfire.SqlServer;
@@ -8,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Web.Common.ApplicationBuilder;
@@ -87,13 +87,13 @@ public class HangfireComposer : IComposer
                 .UseConsole()
                 .UseSqlServerStorage((Func<SqlConnection>)ConnectionFactory, new SqlServerStorageOptions
                 {
-                    PrepareSchemaIfNecessary = true,
-                    EnableHeavyMigrations = true,
-                    CommandBatchMaxTimeout = TimeSpan.FromMinutes(5),
-                    SlidingInvisibilityTimeout = TimeSpan.FromMinutes(5),
-                    QueuePollInterval = TimeSpan.Zero,
-                    UseRecommendedIsolationLevel = true,
-                    DisableGlobalLocks = true
+                    PrepareSchemaIfNecessary = settings.StorageOptions.PrepareSchemaIfNecessary,
+                    EnableHeavyMigrations = settings.StorageOptions.EnableHeavyMigrations,
+                    CommandBatchMaxTimeout = settings.StorageOptions.CommandBatchMaxTimeout,
+                    SlidingInvisibilityTimeout = settings.StorageOptions.SlidingInvisibilityTimeout,
+                    QueuePollInterval = settings.StorageOptions.QueuePollInterval,
+                    UseRecommendedIsolationLevel = settings.StorageOptions.UseRecommendedIsolationLevel,
+                    DisableGlobalLocks = settings.StorageOptions.DisableGlobalLocks
                 });
         });
 
